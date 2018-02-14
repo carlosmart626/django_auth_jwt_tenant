@@ -1,0 +1,3 @@
+include LICENSE
+include README.rst
+recursive-include django_auth_jwt_tenant/templates *
