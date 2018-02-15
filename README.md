@@ -10,13 +10,8 @@ JWT_SECRET_KEY = DjangoProject_Token_Provider.JWT_SECRET_KEY
 ```
 
 Example to protect a GraphQL View.
-```
-from django_auth_jwt_tenant.mixins import JSONWebTokenTenantAuthMixin
+![usage example](https://raw.githubusercontent.com/CarlosMart626/django_auth_jwt_tenant/master/django_auth_jwt_tenant.png "Usage example")
 
-
-class AuthGraphQLView(JSONWebTokenTenantAuthMixin, GraphQLView):
-    pass
-```
 
 Now you can authenticate using token from another Django Project.
 
