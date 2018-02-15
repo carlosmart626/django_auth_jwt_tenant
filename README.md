@@ -3,6 +3,10 @@ This is a library to enable auth from another Django project using JWT.
 
 From your **Django Main** project define a Key to sign JWT and use the same Key in `JWT_SECRET_KEY` setting to validate the JWT token provided in the **Authorization Header**.
 
+## Installation
+```
+pip install django-auth-jwt-tenant
+```
 ## Usage
 Set JWT
 ```
