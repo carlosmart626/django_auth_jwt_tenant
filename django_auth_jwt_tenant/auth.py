@@ -6,6 +6,7 @@ from django.core.exceptions import PermissionDenied
 
 from django_auth_jwt_tenant import settings
 from django_auth_jwt_tenant.compat import User
+from django_auth_jwt_tenant.exceptions import AuthenticationFailed
 
 
 jwt_payload_handler = settings.JWT_PAYLOAD_HANDLER
@@ -18,7 +19,6 @@ def get_token(**credentials):
     """
     Generate JWT token to the pass in user with the credentials passed in.
     """
-    token = None
     user = authenticate(**credentials)
     if user:
         if not user.is_active:
@@ -35,8 +35,8 @@ def get_token(**credentials):
             )
 
         token = jwt_encode_handler(payload)
-
-    return token
+    else:
+        raise AuthenticationFailed()
 
 
 def get_token_from_user(user: User):
