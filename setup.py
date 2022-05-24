@@ -27,7 +27,7 @@ tests_require = [
     'pytz',
     'django-filter',
     'pytest-django==3.1.2',
-    'PyJWT==1.5.3'
+    'PyJWT==2.4.0'
 ]
 
 CLASSIFIERS = [
